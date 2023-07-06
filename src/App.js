@@ -19,11 +19,11 @@ function App() {
       if (prevCount === 1) {
         return prevCount
       }
-      return prevCount - 1
+      else{
+        return prevCount - 1}
     });
   };
   
-
   const handleInputChange = (index, inputIndex, value) => {
     const updatedTeams = [...teams];
     if (!updatedTeams[index]) {
@@ -37,7 +37,6 @@ function App() {
     // console.log(teams)
     const copyFirstTeam = [...firstTeam]
     const copySecondTeam = [...secondTeam];
-
     teams.forEach((team) => {
       const firstTeamMember = sample(team)
       copyFirstTeam.push(firstTeamMember)
@@ -51,9 +50,7 @@ function App() {
   }
 
   const handleTwoTeam = () => {
-    setFirstTeam([])
-    setSecondTeam([])
-    setShow(false)
+    window.location.reload()
   }
 
   return (
@@ -95,23 +92,26 @@ function App() {
             </div>
           </div>
         </div>
-        {[...Array(inputTeamCount)].map((_, index) => (
-          <InputTeam
-            key={index}
-            index={index}
-            onInputChange={handleInputChange}
-          ></InputTeam>
-        ))}
         {
           show === false ? (
             <>
+            {[...Array(inputTeamCount)].map((_, index) => (
+              <InputTeam
+                key={index}
+                index={index}
+                onInputChange={handleInputChange}
+              ></InputTeam>
+            ))}
               <div>
                 <button className='btnBoxRangeMinus' onClick={handleMinusTeam}>-</button>
                 <button className='btnBoxRangePlus' onClick={handleAddTeam}>+</button>
               </div>
               <button className='btnBox' onClick={handleTeamCreation}>STRIKE</button>
             </>
-          ) : <button className='btnBox' onClick={handleTwoTeam} >다시하기</button>
+          ) :
+          <div>
+            <button  className='btnBox' onClick={handleTwoTeam} >다시하기</button>
+          </div>
         }
 
       </header>
