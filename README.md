@@ -1,1 +1,1 @@
-[볼링 팀 짜기 링크](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[볼링팀짜기](https://yongseong2.github.io/bowling-team/)
