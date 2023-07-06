@@ -14,6 +14,16 @@ function App() {
     setInputTeamCount(prevCount => prevCount + 1);
   };
 
+  const handleMinusTeam = () => {
+    setInputTeamCount(prevCount => {
+      if (prevCount === 0) {
+        return prevCount
+      }
+      return prevCount - 1
+    });
+  };
+  
+
   const handleInputChange = (index, inputIndex, value) => {
     const updatedTeams = [...teams];
     if (!updatedTeams[index]) {
@@ -93,7 +103,10 @@ function App() {
         {
           show === false ? (
             <>
-              <button className='btnBox' onClick={handleAddTeam}>추가하기</button>
+              <div>
+                <button className='btnBoxRangeMinus' onClick={handleMinusTeam}>-</button>
+                <button className='btnBoxRangePlus' onClick={handleAddTeam}>+</button>
+              </div>
               <button className='btnBox' onClick={handleTeamCreation}>팀짜기</button>
             </>
           ) : <button className='btnBox' onClick={handleTwoTeam} >다시하기</button>

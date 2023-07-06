@@ -66,6 +66,22 @@
   background: #BAF0A7;
 }
 
+.btnBoxRangePlus {
+  margin: 3px;
+  width: 49px;
+  background: #BAF0A7;
+  height: 33px;
+  border-radius: 10px;
+}
+
+.btnBoxRangeMinus {
+  margin: 3px;
+  width: 49px;
+  background: #BAF0A7;
+  height: 33px;
+  border-radius: 10px;
+}
+
 .teamMember {
   font-size: 20px;
   color: black;
