@@ -16,7 +16,7 @@ function App() {
 
   const handleMinusTeam = () => {
     setInputTeamCount(prevCount => {
-      if (prevCount === 0) {
+      if (prevCount === 1) {
         return prevCount
       }
       return prevCount - 1
@@ -62,6 +62,8 @@ function App() {
         <h1 className='title'>
           나뭇잎 볼링 팀 짜기
         </h1>
+        <p>두개의 입력창에 다른 팀이 됐으면 하는 팀원을 입력해주세요</p>
+        <p>모든 팀원을 입력 후 STRIKE를 클릭해주시면 끝!</p>
         <img className='bowling' src={bowling} alt="bowl" width="100px"/>
         <div className='twoTeam'>
           <div>
@@ -107,7 +109,7 @@ function App() {
                 <button className='btnBoxRangeMinus' onClick={handleMinusTeam}>-</button>
                 <button className='btnBoxRangePlus' onClick={handleAddTeam}>+</button>
               </div>
-              <button className='btnBox' onClick={handleTeamCreation}>팀짜기</button>
+              <button className='btnBox' onClick={handleTeamCreation}>STRIKE</button>
             </>
           ) : <button className='btnBox' onClick={handleTwoTeam} >다시하기</button>
         }
